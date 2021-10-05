@@ -64,8 +64,8 @@ def entropy_weighting(X):
 
     Ej = Ej / np.log(X.shape[0])
 
-    wagi = (1 - Ej) / (np.sum(1 - Ej))
-    return wagi
+    weights = (1 - Ej) / (np.sum(1 - Ej))
+    return weights
 
 
 # standard deviation weighting
@@ -87,8 +87,8 @@ def critic_weighting(X):
             correlations[i, j], _ = pearsonr(x_norm[:, i], x_norm[:, j])
 
     difference = 1 - correlations
-    suma = np.sum(difference, axis = 0)
-    C = std * suma
+    summ = np.sum(difference, axis = 0)
+    C = std * summ
     w = C / (np.sum(C, axis = 0))
     return w
 
