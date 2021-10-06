@@ -188,9 +188,9 @@ def COMET(matrix, weights, criteria_types):
 
 
 # main
-# choose year
+# choose year: '2015', '2016', '2017', '2018', '2019'
 year = '2019'
-# choose type of dataset: absolute or relative
+# choose type of dataset: 'absolute' or 'relative'
 dataset = 'relative'
 file = 'RES_EU_' + year + '_' + dataset + '.csv'
 data = pd.read_csv(file)
@@ -199,7 +199,7 @@ list_alt_names = []
 for i in range(1, len(data) + 1):
     list_alt_names.append(r'$A_{' + str(i) + '}$')
 
-# choose weighting method
+# choose weighting method: 'equal', 'entropy', 'std', 'CRITIC'
 weight_type = 'equal'
 # model hierarchization by decomposition
 modules = [[1,2,3,4,5], [6,7,8,9], [10,11,12], [13,14,15]]
