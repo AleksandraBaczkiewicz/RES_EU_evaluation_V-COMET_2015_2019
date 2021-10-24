@@ -171,10 +171,7 @@ def COMET(matrix, weights, criteria_types):
 
         for i in range(len(p)):
             for j in range(len(co[i])):
-                for index in range(len(cv[j])):
-                    if cv[j][index] == co[i][j]:
-                        ind = index
-                        break
+                ind = int(np.where(cv[j] == co[i][j])[0])
                 W.append(evaluate_alternatives(cv[j], alt[j], ind))
             score += np.product(W) * p[i]
             W = []
